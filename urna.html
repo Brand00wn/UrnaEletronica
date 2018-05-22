@@ -1,0 +1,142 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title> Urna Eleitoral</title>
+</head>
+<script language="JavaScript">
+ 
+ var branco=0;
+ var baltazar=0;
+ var samuca=0;
+ var nulo=0;
+ var total=0;
+ var valido=0;
+ var invalido=0;
+ var pbaltazar=0;
+ var psamuca=0;
+ var pbranco=0;
+ var pnulo=0;
+ var pvalido=0;
+ var pinvalido=0;
+ 
+ 
+function branc(){
+        document.getElementById('tela').value = '';
+        branco=branco+1;
+		total=total+1;
+		
+		  }
+ function totaliza(){
+        document.getElementById('tela').value = ''; 
+ 
+        pbaltazar=baltazar*100/total;
+		psamuca=samuca*100/total;
+		pbranco=branco*100/total;
+		pnulo=nulo*100/total;
+		pvalido=valido*100/total;
+		pinvalido=invalido*100/total;
+		
+		document.getElementById('baltazar').value=baltazar;
+		document.getElementById('samuca').value=samuca;
+		document.getElementById('valido').value=valido;
+		document.getElementById('branco').value=branco;
+		document.getElementById('nulo').value=nulo;
+		document.getElementById('invalido').value=invalido;
+		document.getElementById('total').value=total;
+       
+		document.getElementById('pbaltazar').value=pbaltazar;
+		document.getElementById('psamuca').value=psamuca;
+		document.getElementById('pvalido').value=pvalido;
+		document.getElementById('pbranco').value=pbranco;
+		document.getElementById('pnulo').value=pnulo;
+		document.getElementById('pinvalido').value=pinvalido;
+		document.getElementById('ptotal').value=ptotal;
+	}
+ function montar(x){
+			document.getElementById('tela').value+=x;
+		  }
+function confirma(){
+  if(document.getElementById('tela').value==10){
+    
+	baltazar=baltazar+1;
+	total=total+1;
+	valido=valido+1;
+  }
+  else{
+    if(document.getElementById('tela').value==43){
+	  samuca=samuca+1;
+	  total=total+1;
+	  valido=valido+1;
+	}
+	else{
+	  if(document.getElementById('tela').value!=43 && 10){
+	    nulo=nulo+1;
+		total=total+1;
+		invalido=invalido+1;
+
+	  }
+	}
+  }
+  document.getElementById('tela').value = '';
+}		  
+</script>
+<body>
+<link rel="stylesheet" href="estilo.css">
+
+<div class="container">
+  <div class="cinzaEscuro">
+   <b>JUSTIÇA<br>ELEITORAL</b> 
+  </div>
+  
+    <div class="ground">
+  <br/> <br/>
+  <input type="text" id="tela" size="50" class="tela" maxlength="2" />
+ <br/> <br/>
+ <input type="button" class="botao" value="1" onClick="montar(1)"/>
+ <input type="button" class="botao" value="2" onClick="montar(2)"/>
+ <input type="button" class="botao" value="3" onClick="montar(3)"/> 
+ <br/> <br/>
+ <input type="button" class="botao" value="4" onClick="montar(4)"/> 
+ <input type="button" class="botao" value="5" onClick="montar(5)"/> 
+ <input type="button" class="botao" value="6" onClick="montar(6)"/>
+ <br/> <br/>
+ <input type="button" class="botao" value="7" onClick="montar(7)"/> 
+ <input type="button" class="botao" value="8" onClick="montar(8)"/> 
+ <input type="button" class="botao" value="9" onClick="montar(9)"/>
+ <br/> <br/>
+ <input type="button" class="botao" value="0" onClick="montar(0)"/>
+ <br/> <br/>
+ <input type="button" class="white" value="Branco" onClick="branc()"/>
+ <input type="button" class="laranja" value="Total" onClick="totaliza()"/>
+ <input type="button" class="verde" value="Confirma" onClick="confirma()"/>
+  
+	
+  </div>
+  </div>
+
+<p>&nbsp;</p>
+
+	<div id="bord">
+		<div id="result">
+        
+		<p>&nbsp;</p>
+<br>		
+            <p       ><H2 class="lab">Total: <input type="text" name="textfield" class="box" id="total" /></p>
+			</form>
+			<p><H2 class="lab">Baltazar: <input type="text" name="textfield" class="box" id="baltazar" />-----------------><input type="text" name="textfield" class="box" id="pbaltazar" />%</p>
+			<p><H2 class="lab">Samuca: <input type="text" name="textfield" class="box" id="samuca" />-----------------><input type="text" name="textfield" class="box" id="psamuca" />%</p>
+			<p><H2 class="lab">Válidos: <input type="text" name="textfield" class="box" id="valido" />----------------->
+			<input type="text" name="textfield" id="pvalido" class="box" />%</p>
+			<p><H2 class="lab">Branco: <input type="text" name="textfield" class="box" id="branco" />----------------->
+			<input type="text" name="textfield" class="box" id="pbranco" />%</p>
+			<p><H2 class="lab">Nulo: <input type="text" name="textfield" class="box" id="nulo" />-------------------->
+			<input type="text" name="textfield" class="box" id="pnulo" />%</p>
+			<p><H2 class="lab">Inválidos: <input type="text" name="textfield" class="box" id="invalido" />----------------->
+			<input type="text" name="textfield" class="box" id="pinvalido" />%</p>
+	<p>&nbsp;</p>
+		</div>
+	</div>
+
+</body>
+ 
+</html>

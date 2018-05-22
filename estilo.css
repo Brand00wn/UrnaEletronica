@@ -1,0 +1,83 @@
+.container{
+  text-align: center;
+  background-repeat: round;
+  background-position: center;
+  height: 100%;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  position: fixed;
+}
+.cinzaEscuro{
+  background-color: #444;
+  height: 80;
+  font-size: 33;
+  font-family: Impact;
+  color: white;
+}
+.ground{
+	background-color: black;
+	height: 600;
+	width: 500;
+	float: right;
+  margin-top: 42px;
+  margin-right: 20px;
+}
+.tela{
+	height: 60;
+	width: 350;
+	font-size: 50;
+	text-align: center;
+	font-family: Impact;
+     float: center;
+	
+}
+.botao{
+  margin: 10px;
+  background-color: black;
+  color: snow;
+  border-radius: 5px;
+  height: 50px;
+  width: 100px;
+  font-size: 25;
+  font-family: Impact;
+  float: center;
+}
+
+.white{
+  height: 70px;
+  width: 150px;
+  font-family: Impact;
+  font-size: 25;
+  background-color: white;
+}
+.laranja{
+  height: 70px;
+  width: 150px;
+  background-color: #E67401;
+  font-family: Impact;
+  font-size: 25;
+  color: snow;
+}
+.verde{
+  height: 70px;
+  width: 150px;
+  background-color: green;
+  font-family: Impact;
+  font-size: 25;
+  color: snow;
+}
+.box{
+  font-family: Impact;
+  font-size: 25;
+  height: 30px;
+  width: 100px;
+  float: center;
+  text-align: center;
+  
+	
+}
+.lab{
+	font-family: Impact;
+  font-size: 30;
+}
