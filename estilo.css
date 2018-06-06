@@ -15,7 +15,16 @@
   font-family: Impact;
   color: white;
 }
-.ground{
+.ground1{
+  border-style: solid;
+	border-color: black;
+	height: 595;
+	width: 800;
+	float: right;
+  margin-top: 41px;
+  margin-right: 20px;
+}
+.ground2{
 	background-color: black;
 	height: 600;
 	width: 500;
@@ -29,8 +38,11 @@
 	font-size: 50;
 	text-align: center;
 	font-family: Impact;
-     float: center;
-	
+  float: center;
+  border-color: black;
+  border-style: solid;
+  color: transparent;
+  text-shadow: 0 0 0 gray;
 }
 .botao{
   margin: 10px;
@@ -74,8 +86,8 @@
   width: 100px;
   float: center;
   text-align: center;
-  
-	
+
+
 }
 .lab{
 	font-family: Impact;
