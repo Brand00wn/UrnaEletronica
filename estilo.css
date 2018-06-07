@@ -34,7 +34,7 @@
 }
 .tela{
 	height: 60;
-	width: 350;
+	width: 100;
 	font-size: 50;
 	text-align: center;
 	font-family: Impact;
@@ -42,7 +42,7 @@
   border-color: black;
   border-style: solid;
   color: transparent;
-  text-shadow: 0 0 0 gray;
+  text-shadow: 0 0 0 black;
 }
 .botao{
   margin: 10px;
@@ -92,4 +92,32 @@
 .lab{
 	font-family: Impact;
   font-size: 30;
+  float: left;
+}
+
+h2{
+  float: left;
+  margin-left: 20px;
+  font-family: Arial;
+}
+
+h1{
+  float: left;
+  font-family: Arial;
+}
+
+.row{
+  width: 45%;
+  float: left;
+  margin-left: 20px;
+}
+
+ul{
+  margin-left: -120px;
+}
+
+a{
+  float: left;
+  text-align: left;
+  margin-left: 10px;
 }

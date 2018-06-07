@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title> Urna Eleitoral</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script language="JavaScript">
+
+function mostra(){
+  document.getElementById("oi").innerHTML = "TCHAU MUNDO"
+}
+
+function btnumber(event){
+	var key = event.keyCode || window.event.keyCode;
+	if (key == 27) { // Se For o "Enter Pressionado"
+    mostra();
+	}
+  }
+
+</script>
+
+<body>
+  <h1 id="oi">OLA MUNDO</h1>
+  <input type="text" onkeydown="btnumber(event)" autofocus>
+  <button onclick="mostra()"> Tester </button>
+
+</html>
