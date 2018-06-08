@@ -1,3 +1,7 @@
+/*  Autor: Gustavo de Mello Brandão */
+/*  Simulação de Urna Eletrônica    */
+/*  Data de conclusão: 08/06/2018   */
+
 .container{
   text-align: center;
   background-repeat: round;
@@ -93,6 +97,15 @@
 	font-family: Impact;
   font-size: 30;
   float: left;
+}
+
+.labb{
+	font-family: Impact;
+  font-size: 30;
+  float: left;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000;
+  color: white;
 }
 
 h2{

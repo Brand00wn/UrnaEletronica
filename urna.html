@@ -1,158 +1,155 @@
+<!--
+** Autor: Gustavo de Mello Brandão **
+** Data de conclusão: 08/06/2018   **
+** Simulação de Urna Eletrônica    **
+-->
+
 <html>
-<head>
-<meta charset="utf-8">
-<title> Urna Eleitoral</title>
-</head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <head>
+    <!--Meta Tags-->
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta name="generator" content="Atom" />
+    <meta name="rating" content="general" />
+    <meta name="description" content="Simulador de Urna Eletrônica">
+    <meta name="author" content="Gustavo de Mello Brandão">
+    <meta name="copyright" content="© 2018 Gustavo de Mello Brandão" />
+    <meta name="keywords" content="urna, eletronica, urna eletronica, simulação, simulação de urna, simulação de urna eletronica, programa de urna, javascript, urna em javascript">
+    <!--Fim das Meta Tags-->
 
+    <title> Urna Eleitoral</title>
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><!--Importação do Jquery-->
 
+  <script>
+   // ** Declaração de variáveis do sistema **
+   var branco=0; // Guarda o total de votos em branco //
+   var bolsonaro=0; // Guarda o total de votos do presidente 1 //
+   var lula=0; // Guarda o total de votos do presidente 2 //
+   var nulo=0; // Guarda o total de votos nulos //
+   var total=0; // Guarda o total de votos em geral //
+   // ** Fim da declaração de variáveis **
 
-<script>
-
- var branco=0;
- var bolsonaro=0;
- var lula=0;
- var nulo=0;
- var total=0;
- var valido=0;
- var invalido=0;
-
-
-function branc(){
-        document.getElementById('tela').value = '';
-        branco=branco+1;
-		    total=total+1;
-
-		  }
-
- function montar(x){
-			document.getElementById('tela').value+=x;
-		  }
-
-
-
-
-function btnumber(event){
-  audio = document.getElementById('audio');
-	var key = event.keyCode || window.event.keyCode;
-	if (key == 13) { // Se For o "Enter Pressionado"
-        if(document.getElementById('tela').value ==43){
-          lula=lula+1;
-          total=total+1;
-          valido=valido+1;
-          document.getElementById('tela').value = '';
-        }
-        else{
-          if(document.getElementById('tela').value ==10){
-            bolsonaro=bolsonaro+1;
-            total=total+1;
-            valido=valido+1;
-            document.getElementById('tela').value = '';
-        }
-        else{
-          if(document.getElementById('tela').value!='43' && '10'){
-            nulo=nulo+1;
-            total=total+1;
-            invalido=invalido+1;
-            document.getElementById('tela').value = '';
+   // ** Função central do sistema
+   function sis(event){
+     audio = document.getElementById('audio'); // Guarda na seguinte variável o áudio setado na tag <audio> que se encontra dentro da tag <body> //
+	   var key = event.keyCode || window.event.keyCode; // Define o uso do evento keyCode, responsável pelo reconhecimento de teclas do teclado //
+     // ** Verificação de teclas pressionadas e eventos atribuídos à elas **
+     if (key == 13) { // Se a tecla ENTER for pressionada //
+      if(document.getElementById('tela').value ==43){ // Verificação se o número digitado pelo usuário se refere ao candidato 1 //
+        lula=lula+1; // Se sim ele soma mais um na variável do candidato 1 //
+        total=total+1; // E na variável responsável pelo total de votos //
+        document.getElementById('tela').value = ''; // Limpa a tela //
+      }else{
+        if(document.getElementById('tela').value ==10){ // Verificação se o número digitado pelo usuário se refere ao candidato 2 //
+          bolsonaro=bolsonaro+1; // Se sim ele soma mais um na variável do candidato 2 //
+          total=total+1; // E na variável responsável pelo total de votos //
+          document.getElementById('tela').value = ''; // Limpa a tela //
+        }else{
+          if(document.getElementById('tela').value!='43' && '10'){ // Se o valor digitado for diferente do número de todos os candidatos //
+            nulo=nulo+1; // Soma mais um na variável responsável pelos votos nulos //
+            total=total+1; // E na variável responsável pelo total de votos //
+            document.getElementById('tela').value = ''; // Limpa a tela //
           }
+        }
       }
-      }
 
-    audio.play();
-	}
+      audio.play(); // Reproduz o som da urna //
+    }
 
-  if(key == 116){
-    alert("REFRESH DESABILITADO!!!");
-  }
+    if(key == 116){ // Se a tecla F5 for pressionada //
+      alert("A ATUALIZAÇÃO DE TELA FOI BLOQUEADA!!!"); // Um alert é acionado, desviando a função de refresh pela tecla citada acima. Obs.: Ctrl+F5 continua funcionando normalmente //
+    }
 
-  if(key == 27){
-    document.getElementById("screen").innerHTML = "<h1 style='margin-left: 20px;'>RESULTADOS<h1>  <br>  <div class='bord'><div class'result'><ul style='list-style-type: none;'>  <li><H2 class='lab' style='color: green;'>Jair Bolsonaro(PSC): " +bolsonaro+ "</H2></li> <li><H2 class='lab' style='color: red;'>Luís Inácio Lula da Silva(PT): " +lula+ "</H2></li>  <li><H2 class='lab' style='color:white; text-shadow: 2px 2px black;'>Votos em Branco: " +branco+ "</H2></li>  <li><H2 class='lab'>Votos Nulos: " +nulo+ "</H2></li>  </ul>";
-    totaliza();
-  }
+    if(key == 27){ // Se a tecla ESC for pressionada //
+      document.getElementById("screen").innerHTML = "<h1 style='margin-left: 20px;'>RESULTADOS<h1>  <br/>  <div class='bord'><div class'result'><ul style='list-style-type: none;'>  <li><H2 class='lab' style='color: green;'>Jair Bolsonaro(PSC): " +bolsonaro+ "</H2></li> <li><H2 class='lab' style='color: red;'>Luís Inácio Lula da Silva(PT): " +lula+ "</H2></li>  <li><H2 class='labb'>Votos em Branco: " +branco+ "</H2></li>  <li><H2 class='lab'>Votos Nulos: " +nulo+ "</H2></li>  </ul>"; // É mostrada a tela de resultados //
+    }
 
-  if(key == 17){
-    branc();
-    audio.play();
-    alert("Voto em branco!!");
-  }
+    if(key == 17){ // Se a tecla CTRL for pressionada //
+      branco=branco+1; // Contabiliza como um voto em branco //
+      total=total+1; // Ainda assim entra para o total de votos //
+      document.getElementById('tela').value = ''; // Limpa a tela //
+      audio.play(); // Reproduz o som da urna //
+      alert("Voto em branco!!"); // Alerta na tela que foi contabilizado um voto nulo //
+    }
 
-  if(key == 08){
-    document.getElementById('tela').value = '';
-  }
-}
+    if(key == 08){ // Se a tecla BACKSPACE for pressionada //
+      document.getElementById('tela').value = ''; // Limpa a tela. OBS.: FUNÇÃO CORRIGE //
+    }
+  // ** Fim da Verificação de teclas pressionadas e eventos atribuídos à elas ** //
+} // ** Fim da função central do sistema ** ///
 
 </script>
 
-
 <body style="cursor:none;">
+  <!--Tag onde é setado o barulho de confirmação da urna-->
   <audio id="audio">
     <source src="urna.mp3" type="audio/mpeg">
-    Seu navegador não possui suporte ao elemento audio
   </audio>
-<link rel="stylesheet" href="estilo.css">
+  <!--Fim da tag de audio-->
 
-<div class="container">
-  <div class="cinzaEscuro">
-   <b>JUSTIÇA<br>ELEITORAL</b>
-  </div>
+  <link rel="stylesheet" href="estilo.css"><!--Importação da folha de estilo css-->
 
-    <div class="ground2">
-  <br/> <br/>
-
- <br/> <br/>
- <input type="button" class="botao" value="1" onClick="montar(1)"/>
- <input type="button" class="botao" value="2" onClick="montar(2)"/>
- <input type="button" class="botao" value="3" onClick="montar(3)"/>
- <br/> <br/>
- <input type="button" class="botao" value="4" onClick="montar(4)"/>
- <input type="button" class="botao" value="5" onClick="montar(5)"/>
- <input type="button" class="botao" value="6" onClick="montar(6)"/>
- <br/> <br/>
- <input type="button" class="botao" value="7" onClick="montar(7)"/>
- <input type="button" class="botao" value="8" onClick="montar(8)"/>
- <input type="button" class="botao" value="9" onClick="montar(9)"/>
- <br/> <br/>
- <input type="button" class="botao" value="0" onClick="montar(0)"/>
- <br/> <br/>
- <input type="button" class="white" value="Branco" onClick="branc()" disabled/>
- <input type="button" class="laranja" value="Corrigir" onClick="totaliza()" disabled/>
- <input type="button" class="verde" value="Confirma" onClick="confirma()" disabled/>
-
-  </div>
-
-
-  <div class="ground1" id="screen">
-  <br/> <br/>
-
-    <h2>SEU VOTO PARA:</h2><br><br>
-
-    <h1>PRESIDENTE(A)</h1>
-    <br><br><br><br><br>
-
-    <div class="row">
-      <h1>Número:</h1>
-    <input type="text" id="tela" onkeydown='btnumber(event);' size="20" class="tela" maxlength="2" autofocus/>
+  <!--Tela container-->
+  <div class="container">
+    <!--Cabeçalho cinza-->
+    <div class="cinzaEscuro">
+      <b>JUSTIÇA<br/>ELEITORAL</b>
     </div>
+    <!--Fim do cabeçalho cinza-->
 
-    <hr style="margin-top: 300px;">
-    <a>Aperte a tecla:<br><br>
-    <b>ENTER</b> para confirmar seu voto.<br>
-    <b>CTRL</b> para votar em branco.<br>
-    <b>BACKSPACE(APAGAR)</b> para corrigir seu voto.<br>
-    </a>
+    <!--Tela do teclado-->
+    <div class="ground2">
+      <br/><br/><br/><br/>
+      <input type="button" class="botao" value="1"/>
+      <input type="button" class="botao" value="2"/>
+      <input type="button" class="botao" value="3"/>
+      <br/><br/>
+      <input type="button" class="botao" value="4"/>
+      <input type="button" class="botao" value="5"/>
+      <input type="button" class="botao" value="6"/>
+      <br/><br/>
+      <input type="button" class="botao" value="7"/>
+      <input type="button" class="botao" value="8"/>
+      <input type="button" class="botao" value="9"/>
+      <br/><br/>
+      <input type="button" class="botao" value="0"/>
+      <br/><br/>
+      <input type="button" class="white" value="Branco" disabled/>
+      <input type="button" class="laranja" value="Corrigir" disabled/>
+      <input type="button" class="verde" value="Confirma" disabled/>
+
+    </div>
+    <!--Fim da tela do teclado-->
+
+    <!--Tela de resultado e visualização de entrada-->
+    <div class="ground1" id="screen">
+      <br/><br/>
+      <h2>SEU VOTO PARA:</h2>
+      <br/><br/>
+      <h1>PRESIDENTE(A)</h1>
+      <br/><br/><br/><br/><br/>
+
+      <div class="row">
+        <h1>Número:</h1>
+        <input type="text" id="tela" onkeydown='sis(event);' size="20" class="tela" maxlength="2" autofocus/>
+      </div>
+
+      <hr style="margin-top: 300px;">
+
+      <a>Aperte a tecla:<br/><br/>
+        <b>ENTER</b> para confirmar seu voto.<br/>
+        <b>CTRL</b> para votar em branco.<br/>
+        <b>BACKSPACE(APAGAR)</b> para corrigir seu voto.<br/>
+      </a>
+
+    </div>
+    <!--Fim da tela de resultado e visualização de entrada-->
+
   </div>
-
-
-
-  </div>
+  <!--Fim da tela container-->
 
 <p>&nbsp;</p>
-
-
-
-
-
 
 </body>
 
