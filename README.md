@@ -13,7 +13,7 @@
   ESC (Mostra os resultados)
   
 # Observações:
-  Os candidatos apenas poderão ser adicionados por meio do código em JavaScript, não há interações com banco de dados algum, por este motivo foi retirada a função de refresh do botão F5 para que assim não se perca os dados guardados. O mouse está desabilitado, deixando unica e exclusivamente o uso do teclado para o funcionamento da aplicação. O código ainda está meio bagunçado, mais pra frente com calma devo organizar e identar direitinho.
+  Os candidatos apenas poderão ser adicionados por meio do código em JavaScript, não há interações com banco de dados algum, por este motivo foi retirada a função de refresh do botão F5 para que assim não se perca os dados guardados. O mouse está desabilitado, deixando única e exclusivamente o uso do teclado para o funcionamento da aplicação.
   
 # Contato
   Caso tenha alguma dúvida sobre o funcionamento do código entrar em contato pelo email : sm70plus@gmail.com; ou pelo celular +55 (24) 98851-5335.
